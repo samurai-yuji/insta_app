@@ -1,3 +1,5 @@
+# https://www.instagram.com/developer/
+#
 # CLIENT ID + REDIRECT_URI => CLIENT_ID + CODE + CLIENT_SECRET => ACCESS KEY
 #
 # https://api.instagram.com/oauth/authorize/?client_id=CLIENT_ID&redirect_uri=http://localhost&response_type=code&scope=basic+public_content+follower_list+comments+relationships+likes
