@@ -1,5 +1,3 @@
-require 'instagram'
-require 'hashie'
 require 'sinatra'
 require 'httpclient'
 require 'json'
@@ -18,7 +16,7 @@ class App < Sinatra::Base
 		session[:cid] = ENV["INSTAGRAM_CLIENT_ID"]
 		session[:ruri] = ENV["INSTAGRAM_REDIRECT_URI"]
 	
-		uri = URI.encode("https://api.instagram.com/oauth/authorize/?client_id=#{session[:cid]}&redirect_uri=#{session[:ruri]}&response_type=code&scope=basic+public_content+follower_list+comments+relationships+likes")
+		uri = URI.encode("https://api.instagram.com/oauth/authorize/?client_id=#{session[:cid]}&redirect_uri=#{session[:ruri]}&response_type=code&scope=basic")
 
 		#Fixed : form does not work (I do not understand why)
 		#return "<form action='#{uri}' method='get'><input type=submit>instagram login</input></form>"
