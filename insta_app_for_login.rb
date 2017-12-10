@@ -28,6 +28,8 @@ class App < Sinatra::Base
 	
 		client_secret = ENV["INSTAGRAM_CLIENT_SECRET"]
 	
+		#Comment : grant_type: authorization_code is currently the only supported value
+		#          https://www.instagram.com/developer/authentication/
 		query = {:client_id => session[:cid], :client_secret => client_secret, :grant_type => "authorization_code", :redirect_uri => session[:ruri], :code => code}
 
 		#Fixed : Here post is needed instead of get
