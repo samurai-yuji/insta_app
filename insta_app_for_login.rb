@@ -9,6 +9,10 @@ class App < Sinatra::Base
 		enable :sessions
 	end
 
+	get "/" do
+		return "<a href='/login'>instagram login</a>"
+	end
+
 	get "/login" do
 		#Fixed : properties are not implicitly shared over a session
 		#        need to enable session and use session variables
@@ -20,7 +24,7 @@ class App < Sinatra::Base
 
 		#Fixed : form does not work (I do not understand why)
 		#return "<form action='#{uri}' method='get'><input type=submit>instagram login</input></form>"
-		return "<a href='#{uri}'>instagram login</a>"
+		redirect uri
 	end
 	
 	get "/redirect_from_instagram" do
